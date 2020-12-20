@@ -1,0 +1,14 @@
+name: PHP Mailer
+version: 1.4.0
+description: PHP Mailer plugins for Flextype.
+icon: fas fa-envelope
+author:
+  name: Sergey Romanenko
+  email: support@flextype.org
+  url: https://flextype.org
+homepage: https://github.com/flextype-plugins/phpmailer
+bugs: https://github.com/flextype-plugins/phpmailer/issues
+license: MIT
+
+dependencies:
+  flextype: 0.9.13

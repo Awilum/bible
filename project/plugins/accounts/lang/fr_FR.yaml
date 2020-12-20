@@ -1,0 +1,27 @@
+---
+accounts: Comptes
+accounts_title: Titre
+accounts_description: la description
+accounts_username: Nom d'utilisateur
+accounts_email: Email
+accounts_registered_at: Enregistré à
+accounts_profile_edit: Éditer le profil
+accounts_logout: Déconnexion
+accounts_profile: Profil
+accounts_registration: Enregistrement
+accounts_edit_profile: Éditer le profil
+accounts_login: Connexion
+accounts_state: État
+accounts_password: Mot de passe
+accounts_forgot_password: Mot de passe oublié?
+accounts_reset_password: Réinitialiser le mot de passe
+accounts_full_name: Nom complet
+accounts_new_password: Nouveau mot de passe
+accounts_cancel: Annuler
+accounts_save: Sauvegarder
+accounts_create_user: Créer un utilisateur
+accounts_reset: Réinitialiser
+accounts_message_new_password_was_sended: "Un nouveau mot de passe a été envoyé"
+accounts_message_hashed_password_reset_not_valid: "Hash for password reset is not valid"
+accounts_message_wrong_email_password: "The email and password you entered did not match our records."
+accounts_you_have_no_access_to_view_this_page: "You have no access to view this pages."

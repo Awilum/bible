@@ -1,0 +1,25 @@
+name: Admin
+version: 1.4.0
+description: Admin Panel plugin for Flextype.
+icon: fab fa-fort-awesome
+author:
+  name: Sergey Romanenko
+  email: support@flextype.org
+  url: https://flextype.org
+homepage: https://github.com/flextype-plugins/admin
+documentation: https://github.com/flextype-plugins/admin
+changelog: https://github.com/flextype-plugins/admin/blob/master/CHANGELOG.md
+bugs: https://github.com/flextype-plugins/admin/issues
+keywords: admin, panel, manager
+license: MIT
+
+dependencies:
+  flextype: 0.9.13
+  twig: '>=1.0.0'
+  icon: '>=1.0.0'
+  form: '>=1.0.0'
+  form-admin: '>=1.0.0'
+  jquery: '>=1.0.0'
+  acl: '>=1.0.0'
+  accounts-admin: '>=1.0.0'
+  phpmailer: '>=1.0.0'

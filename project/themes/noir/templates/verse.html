@@ -1,0 +1,18 @@
+{% extends 'themes/' ~ registry.get('plugins.site.settings.theme') ~ '/templates/partials/base.html' %}
+
+{% block content %}
+
+    {% set uri_parts = uri|split('/') %}
+    {% set locale = entries.fetch('locale/' ~ uri_parts.2) %}
+    {% set book = entries.fetch('locale/' ~ uri_parts.2 ~ '/' ~ uri_parts.3) %}
+    {% set chapter = entries.fetch('locale/' ~ uri_parts.2 ~ '/' ~ uri_parts.3 ~ '/' ~ uri_parts.4) %}
+
+    <div class="text-center mb-10 text-center uppercase">
+        <h1 class="text-6xl font-bold tracking-wider">{{ entry.title }}</h1>
+        <a class="hover:text-gray-700" href="{{ url() }}">BIBLE</a> / <a class="hover:text-gray-700" href="{{ url() }}/{{ locale.id }}">{{ locale.title }}</a> / <a class="hover:text-gray-700" href="{{ url() }}/{{ book.id }}">{{ book.title }}</a> / <a class="hover:text-gray-700" href="{{ url() }}/{{ chapter.id }}">{{ chapter.title }}</a>
+    </div>
+
+    <div class="text-3xl mx-auto text-center" style="width: 600px;">
+        {{ entry.content }}
+    </div>
+{% endblock %}

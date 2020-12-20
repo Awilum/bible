@@ -1,0 +1,28 @@
+{% extends 'themes/' ~ registry.get('plugins.site.settings.theme') ~ '/templates/partials/base.html' %}
+
+{% block content %}
+
+    {% set uri_parts = uri|split('/') %}
+    {% set locale = entries.fetch('locale/' ~ uri_parts.2) %}
+    {% set book = entries.fetch('locale/' ~ uri_parts.2 ~ '/' ~ uri_parts.3) %}
+
+    <div class="text-center uppercase mb-10">
+        <h1 class="text-6xl font-bold tracking-wider">{{ entry.title }}</h1>
+        <a class="hover:text-gray-700" href="{{ url() }}">BIBLE</a> / <a class="hover:text-gray-700" href="{{ url() }}/{{ locale.id }}">{{ locale.title }}</a> / <a class="hover:text-gray-700" href="{{ url() }}/{{ book.id }}">{{ book.title }}</a>
+    </div>
+
+    {% set cacheID = strings(entry.id).hash().toString() %}
+
+    {% if (cache.has(cacheID)) %}
+        {% set items = cache.get(cacheID) %}
+    {% else %}
+        {% set items = entries.fetch(entry.id, {'collection': true}).sortBy('slug', 'asc') %}
+        {% do cache.set(cacheID, items) %}
+    {% endif %}
+
+    <ul>
+    {% for item in items %}
+        <li class="mb-3"><a href="{{ url() }}/{{ item.id }}">{{ item.slug }}: {{ item.content }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
